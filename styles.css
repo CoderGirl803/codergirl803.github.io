@@ -139,8 +139,8 @@ img {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: 34px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+  gap: clamp(26px, 4vw, 54px);
   align-items: center;
   min-height: calc(100vh - 156px);
   padding-bottom: 42px;
@@ -178,6 +178,16 @@ h3 {
 h1 {
   max-width: 14ch;
   font-size: clamp(3.1rem, 8vw, 7rem);
+}
+
+.hero-title {
+  max-width: 8.8ch;
+  font-size: clamp(4.2rem, 9.1vw, 7.8rem);
+  line-height: 0.92;
+}
+
+.hero-title span {
+  display: block;
 }
 
 h2 {
@@ -494,8 +504,10 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  color: rgba(255, 255, 255, 0.58);
-  filter: drop-shadow(0 0 10px rgba(210, 108, 255, 0.72));
+  color: rgba(245, 242, 255, 0.68);
+  filter:
+    drop-shadow(0 0 7px rgba(255, 255, 255, 0.72))
+    drop-shadow(0 0 16px rgba(174, 160, 255, 0.4));
   will-change: transform;
 }
 
@@ -504,10 +516,11 @@ p {
   position: fixed;
   z-index: 9999;
   pointer-events: none;
-  color: var(--gold);
+  color: #f8f8ff;
   text-shadow:
-    0 0 8px rgba(255, 209, 102, 0.95),
-    0 0 18px rgba(210, 108, 255, 0.78);
+    0 0 7px rgba(255, 255, 255, 0.95),
+    0 0 18px rgba(198, 202, 219, 0.86),
+    0 0 28px rgba(210, 108, 255, 0.48);
 }
 
 .star-cursor {
@@ -587,6 +600,11 @@ p {
     min-height: auto;
   }
 
+  .hero-title {
+    max-width: 9ch;
+    font-size: clamp(3.8rem, 15vw, 6rem);
+  }
+
   .profile-panel {
     min-height: 430px;
   }
@@ -609,6 +627,10 @@ p {
 @media (max-width: 520px) {
   h1 {
     font-size: clamp(2.8rem, 17vw, 4.3rem);
+  }
+
+  .hero-title {
+    font-size: clamp(3.1rem, 16vw, 4.4rem);
   }
 
   .card,

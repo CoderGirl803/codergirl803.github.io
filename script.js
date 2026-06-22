@@ -407,7 +407,7 @@ function initStarEffects() {
   document.body.append(cursor);
 
   let trailIndex = 0;
-  const trail = Array.from({ length: 14 }, () => {
+  const trail = Array.from({ length: 14 }, (_, index) => {
     const star = document.createElement("span");
     star.className = "cursor-trail-star";
     star.textContent = index % 3 === 0 ? "✧" : "✦";
