@@ -182,8 +182,8 @@ h1 {
 
 .hero-title {
   max-width: 8.8ch;
-  font-size: clamp(4.2rem, 9.1vw, 7.8rem);
-  line-height: 0.92;
+  font-size: clamp(3.55rem, 7.6vw, 6.45rem);
+  line-height: 0.96;
 }
 
 .hero-title span {
@@ -602,7 +602,7 @@ p {
 
   .hero-title {
     max-width: 9ch;
-    font-size: clamp(3.8rem, 15vw, 6rem);
+    font-size: clamp(3.35rem, 13vw, 5.1rem);
   }
 
   .profile-panel {
@@ -630,7 +630,7 @@ p {
   }
 
   .hero-title {
-    font-size: clamp(3.1rem, 16vw, 4.4rem);
+    font-size: clamp(2.85rem, 14vw, 3.9rem);
   }
 
   .card,

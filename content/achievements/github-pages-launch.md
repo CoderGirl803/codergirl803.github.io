@@ -9,17 +9,26 @@ style: "deep"
 
 ## Dates + Awards 
 
-Date	     Tournament	                                Division    
-May 2026	NYC Reads Tournament 3	                    Intermediate PF       
-Mar 2026	NYCUDL Open League Championship	            MS PF JV
-Feb 2026	NYC Reads Tournament 2	                    Intermediate PF Debate
-Jan 2026	NYCUDL Open League Tournament 3	            MS PF JV
-Dec 2025	NYCUDL Open League Tournament 2	            MS PF JV
-Nov 2025	NYC Reads Tournament 1	                    Intermediate PF Debate
-Nov 2025	NYCUDL Open League Tournament 1	            MS PF JV
-May 2025	NYC Reads Tournament 3	                    Novice PF Debate
-Jan 2025	NYCPS Literacy Collaborative Tournament 2	Novice PF Debate
-Nov 2024	NYC Reads Tournament 1	                    Novice PF Debate
+* Nov 2024: 	NYC Reads Tournament 1	                    (Novice PF Debate)
+* Jan 2025:	NYCPS Literacy Collaborative Tournament 2	(Novice PF Debate)
+* May 2025:	NYC Reads Tournament 3	                    (Novice PF Debate)
+* Nov 2025:	NYCUDL Open League Tournament 1	            (MS PF JV)
+* Nov 2025:	NYC Reads Tournament 1	                    (Intermediate PF Debate)
+* Dec 2025:	NYCUDL Open League Tournament 2	            (MS PF JV)
+* Jan 2026:	NYCUDL Open League Tournament 3	            (MS PF JV)
+* Feb 2026:	NYC Reads Tournament 2	                    (Intermediate PF Debate)
+* **Mar 2026:	NYCUDL Open League Championship	            MS PF JV**
+* May 2026:	NYC Reads Tournament 3	                    Intermediate PF 
+
+   
+      
+
+
+
+
+
+
+
 
 ## Why It Matters
 

@@ -359,7 +359,7 @@ function initStarEffects() {
   document.body.append(starsLayer);
 
   const starShapes = ["✦", "✧", "⋆", "✶"];
-  const floatingStars = Array.from({ length: 58 }, (_, index) => {
+  const floatingStars = Array.from({ length: 86 }, (_, index) => {
     const star = document.createElement("span");
     star.className = "floating-star";
     star.textContent = starShapes[index % starShapes.length];
