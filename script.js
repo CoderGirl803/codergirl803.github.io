@@ -5,6 +5,8 @@ const navToggle = document.querySelector(".nav-toggle");
 let manifest = null;
 const contentCache = new Map();
 
+initStarEffects();
+
 navToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -65,11 +67,10 @@ async function renderHome() {
     <section class="hero">
       <div>
         <p class="eyebrow">Available for thoughtful web work</p>
-        <h1>Hello, I am CoderGirl803.</h1>
+        <h1>Senya H. Wanigasooriya</h1>
         <p class="hero-copy">
-          I build polished, practical web experiences and document what I learn.
-          This portfolio is powered by Markdown content folders, so new projects,
-          posts, and achievements stay easy to add.
+          ⭐ A collection of projects, achievements, and adventures from a student
+          who spends a little too much time thinking about the universe. ⭐
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#/projects">View projects</a>
@@ -77,12 +78,7 @@ async function renderHome() {
         </div>
       </div>
       <aside class="profile-panel" aria-label="Profile highlights">
-        <div class="portrait"><span>CG</span></div>
-        <div class="profile-stats">
-          <div class="stat"><strong>${projects.length}</strong><span>Projects</span></div>
-          <div class="stat"><strong>${posts.length}</strong><span>Posts</span></div>
-          <div class="stat"><strong>${achievements.length}</strong><span>Wins</span></div>
-        </div>
+        <div class="portrait"><span>SW</span></div>
       </aside>
     </section>
 
@@ -350,4 +346,81 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function initStarEffects() {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const starsLayer = document.createElement("div");
+  starsLayer.className = "floating-stars";
+  starsLayer.setAttribute("aria-hidden", "true");
+  document.body.append(starsLayer);
+
+  const starShapes = ["✦", "✧", "⋆", "✶"];
+  const floatingStars = Array.from({ length: 30 }, (_, index) => {
+    const star = document.createElement("span");
+    star.className = "floating-star";
+    star.textContent = starShapes[index % starShapes.length];
+    starsLayer.append(star);
+
+    return {
+      element: star,
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      vx: (Math.random() * 0.34 + 0.12) * (Math.random() > 0.5 ? 1 : -1),
+      vy: (Math.random() * 0.28 + 0.1) * (Math.random() > 0.5 ? 1 : -1),
+      size: Math.random() * 12 + 9,
+      rotation: Math.random() * 360,
+      spin: Math.random() * 0.42 - 0.21,
+    };
+  });
+
+  const moveFloatingStars = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    floatingStars.forEach((star) => {
+      star.x += star.vx;
+      star.y += star.vy;
+      star.rotation += star.spin;
+
+      if (star.x <= 0 || star.x >= width - star.size) star.vx *= -1;
+      if (star.y <= 0 || star.y >= height - star.size) star.vy *= -1;
+
+      star.element.style.transform = `translate3d(${star.x}px, ${star.y}px, 0) rotate(${star.rotation}deg)`;
+      star.element.style.fontSize = `${star.size}px`;
+    });
+
+    if (!reducedMotion) requestAnimationFrame(moveFloatingStars);
+  };
+
+  moveFloatingStars();
+
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+
+  const cursor = document.createElement("div");
+  cursor.className = "star-cursor";
+  cursor.textContent = "✦";
+  cursor.setAttribute("aria-hidden", "true");
+  document.body.append(cursor);
+
+  let trailIndex = 0;
+  const trail = Array.from({ length: 14 }, () => {
+    const star = document.createElement("span");
+    star.className = "cursor-trail-star";
+    star.textContent = "✦";
+    document.body.append(star);
+    return star;
+  });
+
+  window.addEventListener("mousemove", (event) => {
+    cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
+
+    const star = trail[trailIndex];
+    trailIndex = (trailIndex + 1) % trail.length;
+    star.style.left = `${event.clientX}px`;
+    star.style.top = `${event.clientY}px`;
+    star.style.animation = "none";
+    star.offsetHeight;
+    star.style.animation = "starTrail 720ms ease-out forwards";
+  });
 }
