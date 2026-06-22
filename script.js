@@ -67,7 +67,10 @@ async function renderHome() {
     <section class="hero">
       <div>
         <p class="eyebrow">Available for thoughtful web work</p>
-        <h1>Senya H. Wanigasooriya</h1>
+        <h1 class="hero-title">
+          <span>Senya H.</span>
+          <span>Wanigasooriya</span>
+        </h1>
         <p class="hero-copy">
           ⭐ A collection of projects, achievements, and adventures from a student
           who spends a little too much time thinking about the universe. ⭐
@@ -356,7 +359,7 @@ function initStarEffects() {
   document.body.append(starsLayer);
 
   const starShapes = ["✦", "✧", "⋆", "✶"];
-  const floatingStars = Array.from({ length: 30 }, (_, index) => {
+  const floatingStars = Array.from({ length: 58 }, (_, index) => {
     const star = document.createElement("span");
     star.className = "floating-star";
     star.textContent = starShapes[index % starShapes.length];
@@ -366,9 +369,9 @@ function initStarEffects() {
       element: star,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      vx: (Math.random() * 0.34 + 0.12) * (Math.random() > 0.5 ? 1 : -1),
-      vy: (Math.random() * 0.28 + 0.1) * (Math.random() > 0.5 ? 1 : -1),
-      size: Math.random() * 12 + 9,
+      vx: (Math.random() * 0.3 + 0.08) * (Math.random() > 0.5 ? 1 : -1),
+      vy: (Math.random() * 0.24 + 0.07) * (Math.random() > 0.5 ? 1 : -1),
+      size: Math.random() * 13 + 7,
       rotation: Math.random() * 360,
       spin: Math.random() * 0.42 - 0.21,
     };
@@ -407,7 +410,7 @@ function initStarEffects() {
   const trail = Array.from({ length: 14 }, () => {
     const star = document.createElement("span");
     star.className = "cursor-trail-star";
-    star.textContent = "✦";
+    star.textContent = index % 3 === 0 ? "✧" : "✦";
     document.body.append(star);
     return star;
   });
